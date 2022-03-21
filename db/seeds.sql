@@ -18,5 +18,5 @@ VALUES
     ('Free', 'Style', 1, NULL),
     ('Mike', "Pilgrim", 2, NULL),
     ('Expo', 'Mark', 3, 3),
-    ('Strath', 'More', 4, 5)
+    ('Strath', 'More', 4, 5),
     ('Jeremy', 'Lead', 5, NULL);
