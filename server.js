@@ -88,13 +88,43 @@ function viewEmployees() {
 }
 
 // Add a department
-const addDepartment = () => {}
+const addDepartment = () => {
+    inquirer 
+    .prompt ({
+        type: 'text',
+        name: 'department_name',
+        message: 'What is the Departments name?'
+    })
+    .then((answer) => {
+        const sql = `INSERT INTO department (department_name)
+        VALUES (?)`;
+        db.query(sql, answer.department_name, (err, res) => {
+            if (err) throw err;
+    
+            console.table(res)
+            console.log('Created New Department! Press view departments to see!')
+    
+            //return user to prompt
+            return promptUser();
+        });
+     });
+
+}
 
 // Add a roll within a department
-const addRoll = () => {}
+const addRoll = () => {
+    const sql = `INSERT INTO job (title, salary, department_id)
+    VALUES (?,?,?)`;
+}
 
 // Add and employee, give them a role, within a department
-const addEmployee = () => {}
+const addEmployee = () => {
+    const sql = `INSERT INTO employee (first_name, last_name, job_id, manager_id)
+    VALUES (?,?,?,?)`;
+}
 
 // Updating an employee role
-const updateRole = () => {}
+const updateRole = () => {
+    const sql = `UPDATE employee SET job_id = ?
+    WHERE id = ?`;
+}

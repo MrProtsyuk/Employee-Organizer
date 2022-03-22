@@ -1,8 +1,8 @@
-INSERT INTO department (id, name)
+INSERT INTO department (department_name)
 VALUES
-    (1, 'Paint'),
-    (2, 'Photography'),
-    (3, 'Sketch');
+    ('Paint'),
+    ('Photography'),
+    ('Sketch');
 
 INSERT INTO job (title, salary, department_id)
 VALUES

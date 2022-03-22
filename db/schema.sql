@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS employee;
 
 CREATE TABLE department (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(30)
+    department_name VARCHAR(30)
 );
 /* replaced role with job because role was highlighted and I didnt trust it */
 CREATE TABLE job (
