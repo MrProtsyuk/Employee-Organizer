@@ -1,6 +1,5 @@
 const db = require('./db/connection');
 const inquirer = require('inquirer');
-const { fetchAsyncQuestionProperty } = require('inquirer/lib/utils/utils');
 require('console.table');
 
 db.connect((err) => {

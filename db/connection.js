@@ -7,7 +7,7 @@ const db = mysql.createConnection(
         // Your MySQL user,
         user: 'root',
         //Your MYSQL pass,
-        password: 'Homebrewed2003!',
+        password: 'YOUR MYSQL PASSWORD',
         database: 'organizer'
     },
     console.log('Connected to the organizer database.')
