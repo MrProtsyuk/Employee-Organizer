@@ -183,6 +183,31 @@ const addEmployee = () => {
 
 // Updating an employee role
 const updateRole = () => {
+    var employees = `SELECT first_name, last_name FROM employee`;
+    var roles = `SELECT title FROM job`;
+    inquirer
+    .prompt ([{
+        type: 'list',
+        name: 'id',
+        message: 'Which employee do you want to choose?',
+        choices: employees,
+    },
+    {
+        type: 'list',
+        name: 'job_id',
+        message: 'Which role would you like to give them?',
+        choices: roles,
+    }]).then((answer) => {
     const sql = `UPDATE employee SET job_id = ?
     WHERE id = ?`;
+    const params = [answer.id, answer.job_id];
+        db.query(sql, params, (err, res) => {
+            if (err) throw err
+            console.table(res)
+            console.log('Updated Employee role!')
+
+            //Return user to prompt
+            return promptUser();
+        })
+    });
 }
